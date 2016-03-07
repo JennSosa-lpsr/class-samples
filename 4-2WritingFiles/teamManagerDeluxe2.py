@@ -68,10 +68,10 @@ while input != "0":
 	print("(2) Print all players")
 	print("(3) Save your player in a file")
 	print("(0) To exit *save first*")
-	choice = raw_input()
+	input = raw_input()
 	
         # if the user chooses 1, let them input their information
-        if choice == "1":
+        if input == "1":
                 print("Name:")
                 n = raw_input()
                 print("Age:")
@@ -86,18 +86,18 @@ while input != "0":
                 # this puts in the users data into the list
                 myPlayers.append(Player(n, a, g, j, p))
 	# if the user choose 2, it will print all the information that they inputed
-        elif choice == "2":
+        elif input == "2":
 		# this creates a loop to print everything in seperate lines from myPlayers
                 for x in myPlayers:
 			# this calls the def function that we make earlier
                         x.printStats()
 	# this saves the players list to a file
-	elif choice == "3":
+	elif input == "3":
 		print("Input name file with .tmd extension, EX: Scholars.tmd")
 		file = raw_input()
 		#print(playerList)
-		saveTeam(myPlayers, file)
-	elif choice == "0":	
-		# when they exit this happens. 
-		print("Goodbye!")
+		saveTeam(myPlayers, file)	
+		
+# when they exit this happens. 
+print("Goodbye!")
                        
