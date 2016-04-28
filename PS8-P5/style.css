@@ -1,0 +1,39 @@
+body {
+	background-color:violet;
+	margin-left:auto;
+	margin-right: auto;
+}
+#heading {
+	border: 2px solid red;
+	color:red;
+	background-color: black;
+	text-align: center;
+}
+#nav {
+	border: 2px solid black;
+	background-color:black;
+	margin-right: auto;
+	text-align: center;
+}
+#description {
+	color:blue;
+	border: 1px dashed green;
+}
+#imageone {
+	text-align: center;
+}
+#imagetwo {
+	text-align: center;
+	border: 3px solid black;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+#footer {
+	clear: both;
+	padding: 10px;
+	background-color: orange;
+	color:white;
+	text-align: center;
+}
