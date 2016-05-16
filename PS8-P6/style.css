@@ -1,0 +1,53 @@
+body {
+	background-color:white;
+	margin-left:auto;
+	margin-right: auto;
+}
+#heading {;
+	color:purple;
+	background-color: black;
+	text-align: center;
+	font-size: 40px
+}
+#description {
+	color:white;
+	background-color:black;
+	text-align: center;
+	font-size: 20px
+}
+#image {
+	margin-right:auto;
+	text-align:right;
+	font-family:Arial,Helvetica,sans-serif;
+}
+#Season1 {
+	font-size:20px;
+	margin-top:-100px
+}
+Season1 h2 {
+	fontsize: 30px;
+}
+#Season2{
+	font-size:20px;
+}
+#Season2 h3 {
+	font-size:30px;
+}
+#Season3 {
+	font-size:20px;
+}
+#Season3 h4 {
+	font-size:30px;
+}
+#description2 {
+	font-size:20px;
+	font-family:Arial,Helvetica,sans-serif;
+}
+#footer {
+	clear: both;
+	padding: 10px;
+	background-color: orange;
+	color:white;
+	text-align: center;
+	margin-top:200px;
+}
