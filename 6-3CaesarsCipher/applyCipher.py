@@ -1,45 +1,69 @@
+# Imports string so that we could use it to access the alphabet.
+import string
+
 # applyCipher.py
 # A program to encrypt/decrypt user text
-# using Caesar's Cipher
-#
+# Using Ceasar's Cipher
 # Author: rc.sosa.jennifer [at] leadps.org
-
-# makes a mapping of encoded alphabet to decoded alphabet
-# arguments: key
-# returns: dictionary of mapped letters.
+# Makes a mapping of encoded alphabet to decoded alphabet 
+# Arguments: key
+# Returns: dictionary of mapped letters
 def createDictionary(key):
-	
-	#placeholder
-	return{}
+	# Make our alphabet(lowercase and uppercase.)
+	alphabetL = string.ascii_lowercase
+	alphabetU = string.ascii_uppercase
+	# Make empty Dictionary.
+	Dictionary = {}
+	# We use a for loop to access the range to the length of the alphabet.
+	for a in range(0, len(alphabetU)):
+		Dictionary[alphabetU[(a - key) % 26]] = alphabetU[a] 	
+	for a in range(0, len(alphabetL)):
+		Dictionary[alphabetL[(a - key) % 26]] = alphabetL[a]
+	# Append more in a loop.
+	for a in range(32, 64):
+		Dictionary[chr(a)] = chr(a)
+	# Return our dictionary.
+	return Dictionary
 
-# gets the encrypted message from the user.
-# arguments: none
-# returns: encoded message
+# Gets the encrypted message from the user.
+# Arguments: none
+# Returns: encoded message
 def getMessage():
-	pass
+	# Ask user for message and make it a string that will be returned.
+	print("Good. What's the message you would like to be encoded?")
+	message = raw_input()
+	return message	
 
-# for each letter in message, decodes and records
-# arguments: encoded message, dictionary
-# returns: decoded message
+
+# For each letter in the message,  decodes and records.
+# Arguments: encoded message, dictionary
+# Returns: decoded message.
 def decodeMessage(message, dictionary):
-	pass
-
-# outputs the decoded message to the terminal
-# arguments: decoded message
-# returns: none
+	# Made a blank variable.
+	newMsg = ""
+	# For loop is used to append variables using the key to decode the message.
+	for l in message:
+		newMsg = newMsg + dictionary[l]
+	return newMsg
+# Outputs the decoded message to the terminal.
+# Arguments: decoded message.
+# Returns: none.
 def printMessage(message):
-	pass
+	print(message)
 
+# Execution starts here.
+# Made try and except to tell the user if an input is wrong.
+try:
+	# Ask for key and make variable.
+	print("What key would be best?")
+	key = int(raw_input())
 
-# execution starts here
+	
+	dictionary = createDictionary(key)
+	encodedMessage = getMessage()
+	decodedMessage = decodeMessage(encodedMessage, dictionary)
+	print("Here's your message, bye!")
+	printMessage(decodedMessage)
 
-# ask user for the key.
-print("What key would you like to use to decode?")
-
-key = int(raw_input())
-
-dictionary = createDictionary(key)
-encodedMessage = getMessage()
-decodedMessage = decodeMessage(encodedMessage, dictionary) 
-
-printMessage(decodedMessage)
+except: 
+	print("Sorry this could not be done.")
